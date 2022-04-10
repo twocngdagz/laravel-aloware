@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+use App\Organs\Listeners\OrganEventSubscriber;
+use App\Pages\Events\PageCreated;
+use App\Pages\Events\PageDeleted;
+use App\Pages\Events\PageUpdated;
+use App\Pages\Listeners\ClearNavigationMenu;
+use App\Pages\Listeners\PageEventSubscriber;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
